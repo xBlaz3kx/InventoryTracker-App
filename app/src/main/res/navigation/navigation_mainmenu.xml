@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_mainmenu"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/addCustomerFragment"
+        android:name="com.inventorytracker.customer.fragments.AddCustomerFragment"
+        android:label="addcustomerfragment"
+        tools:layout="@layout/customer_add_fragment">
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.inventorytracker.mainmenu.fragments.MainMenuFragment"
+        android:label="mainmenufragment"
+        tools:layout="@layout/mainmenu_fragment">
+        <action
+            android:id="@+id/action_mainMenuFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popExitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/mainMenuFragment" />
+
+        <action
+            android:id="@+id/action_mainMenuFragment_to_addOrderFragment"
+            app:destination="@id/addOrderFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_addCustomerFragment"
+            app:destination="@id/addCustomerFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/navigation_mainmenu" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mainMenuFragment_self"
+            app:destination="@id/mainMenuFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.inventorytracker.products.fragments.product.NewProductFragment"
+        android:label="addproductfragment"
+        tools:layout="@layout/product_new_fragment">
+        <argument
+            android:name="UID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addProductFragment_to_productSupplierFragment"
+            app:destination="@id/productSupplierFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/additionalInfoFragment"
+        android:name="com.inventorytracker.orders.fragments.order.AdditionalOrderInfoFragment"
+        android:label="addinfofragment"
+        tools:layout="@layout/order_additionalinfo_fragment">
+        <argument
+            android:name="UID"
+            app:argType="string" />
+        <argument
+            android:name="customerID"
+            app:argType="string" />
+        <argument
+            android:name="customer"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_additionalInfoFragment_to_navigation_orders"
+            app:destination="@id/navigation_orders"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addOrderFragment"
+        android:name="com.inventorytracker.orders.fragments.order.OrderChooseCustomerFragment"
+        android:label="choosecustomerfragment"
+        tools:layout="@layout/customer_choose_fragment">
+        <action
+            android:id="@+id/action_addOrderFragment_to_additionalInfoFragment"
+            app:destination="@id/additionalInfoFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/mainMenuFragment" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/productSupplierFragment"
+        android:name="com.inventorytracker.products.fragments.product.ProductSupplierFragment"
+        android:label="productsupplierfragment"
+        tools:layout="@layout/productsupplierfragment" />
+    <include app:graph="@navigation/navigation_orders" />
+</navigation>

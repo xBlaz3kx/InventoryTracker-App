@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_consignment"
+    app:startDestination="@id/consignmentChooseAction">
+
+    <fragment
+        android:id="@+id/consignmentChooseAction"
+        android:name="com.inventorytracker.orders.fragments.consignment.ConsignmentChooseAction"
+        android:label="consigmentchooseaction"
+        tools:layout="@layout/consignment_chooseaction_fragment">
+        <argument
+            android:name="UID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_consignmentChooseAction_to_closeConsignment"
+            app:destination="@id/closeConsignment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/consignmentChooseAction" />
+        <action
+            android:id="@+id/action_consignmentChooseAction_to_chooseCustomer"
+            app:destination="@id/chooseCustomer"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishConsignment"
+        android:name="com.inventorytracker.orders.fragments.consignment.FinishConsignment"
+        android:label="finishconsignment"
+        tools:layout="@layout/consignment_finish_fragment">
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/closeConsignment"
+        android:name="com.inventorytracker.orders.fragments.consignment.CloseConsignment"
+        android:label="closeConsignment">
+        <action
+            android:id="@+id/action_closeConsignment_to_finishConsignment"
+            app:destination="@id/finishConsignment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/consignmentChooseAction" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCustomer"
+        android:name="com.inventorytracker.orders.fragments.consignment.ChooseCustomer"
+        android:label="choosecustomerfragment"
+        tools:layout="@layout/customer_choose_fragment">
+        <action
+            android:id="@+id/action_chooseCustomer_to_consignmentAdditionalInfo"
+            app:destination="@id/consignmentAdditionalInfo"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/consignmentAdditionalInfo"
+        android:name="com.inventorytracker.orders.fragments.consignment.ConsignmentAdditionalInfo"
+        android:label="consignmentAdditionalInfo"
+        tools:layout="@layout/order_additionalinfo_fragment">
+        <action
+            android:id="@+id/action_consignmentAdditionalInfo_to_makeConsignment"
+            app:destination="@id/makeConsignment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeConsignment"
+        android:name="com.inventorytracker.orders.fragments.consignment.NewConsignment"
+        android:label="makeConsignment"
+        tools:layout="@layout/order_main_fragment">
+        <action
+            android:id="@+id/action_makeConsignment_to_consignmentDiscountFragment"
+            app:destination="@id/consignmentDiscountFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+        <action
+            android:id="@+id/action_makeConsignment_to_productInfoFragment2"
+            app:destination="@id/productInfoFragment2"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/consignmentDiscountFragment"
+        android:name="com.inventorytracker.orders.fragments.consignment.ConsignmentOverviewFragment"
+        android:label="consignmentDiscountFragment"
+        tools:layout="@layout/order_overview_fragment" />
+    <fragment
+        android:id="@+id/productInfoFragment2"
+        android:name="com.inventorytracker.orders.fragments.consignment.ConsignmentProductInfoFragment"
+        android:label="productInfoFragment2"
+        tools:layout="@layout/order_productinfo_fragment">
+        <action
+            android:id="@+id/action_productInfoFragment2_to_makeConsignment"
+            app:destination="@id/makeConsignment" />
+    </fragment>
+</navigation>

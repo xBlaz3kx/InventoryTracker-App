@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainMenuFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/menu" />
+    <item
+        android:id="@+id/addProductFragment"
+        android:icon="@drawable/baseline_add_box_24"
+        android:title="@string/newProduct" />
+    <item
+        android:id="@+id/addCustomerFragment"
+        android:icon="@drawable/baseline_contacts_24"
+        android:title="@string/newCustomer" />
+    <item
+        android:id="@+id/addOrderFragment"
+        android:icon="@drawable/ic_add_to_photos_black_24dp"
+        android:title="@string/AddOrder" />
+</menu>

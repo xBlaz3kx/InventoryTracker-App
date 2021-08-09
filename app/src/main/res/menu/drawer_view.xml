@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Funkcije">
+        <menu>
+            <item
+                android:id="@+id/pastOrders"
+                android:title="Pretekla naročila" />
+            <item
+                android:id="@+id/productList"
+                android:title="Izdelki" />
+            <item
+                android:id="@+id/warehouseReception"
+                android:title="Skladiščenje" />
+            <item
+                android:id="@+id/tasks"
+                android:title="Opravila" />
+            <item
+                android:id="@+id/discountManagement"
+                android:title="Popusti" />
+            <item
+                android:id="@+id/reminders"
+                android:title="Opomniki" />
+            <item
+                android:id="@+id/consignation"
+                android:title="Konsignacija" />
+            <item
+                android:id="@+id/travellingExpenses"
+                android:title="Potni stroški" />
+            <item
+                android:id="@+id/tools"
+                android:title="Računanje" />
+        </menu>
+    </item>
+
+    <item android:title="Statistika">
+        <menu>
+            <item
+                android:id="@+id/bestsellers"
+                android:title="@string/Bestsellers" />
+            <item
+                android:id="@+id/best_customers"
+                android:title="@string/bestcustomers" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="DarkGreyTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/text_white</item>
+        <item name="android:buttonStyle">@style/DarkGreyTheme.Button</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/text_white</item>
+        <item name="hintTextColor">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="DarkGreyTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="background">@color/colorPrimary</item>
+        <item name="itemTextColor">@color/text_white</item>
+    </style>
+
+</resources>

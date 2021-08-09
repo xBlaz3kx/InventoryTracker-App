@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_orders"
+    app:startDestination="@id/makeOrderFragment">
+    <fragment
+        android:id="@+id/makeOrderFragment"
+        android:name="com.inventorytracker.orders.fragments.order.NewOrderFragment"
+        android:label="ordermainscreen"
+        tools:layout="@layout/order_main_fragment">
+        <action
+            android:id="@+id/action_makeOrderFragment_to_productInfoFragment"
+            app:destination="@+id/productInfoFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/makeOrderFragment" />
+        <action
+            android:id="@+id/action_makeOrderFragment_to_orderDiscountFragment"
+            app:destination="@id/orderDiscountFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/makeOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productInfoFragment"
+        android:name="com.inventorytracker.orders.fragments.order.OrderProductInfoFragment"
+        android:label="orderproductinfo"
+        tools:layout="@layout/order_productinfo_fragment">
+        <action
+            android:id="@+id/action_productInfoFragment_to_makeOrderFragment"
+            app:destination="@id/makeOrderFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/makeOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDiscountFragment"
+        android:name="com.inventorytracker.orders.fragments.order.OrderOverviewFragment"
+        android:label="orderdiscountfragment"
+        tools:layout="@layout/order_overview_fragment" />
+</navigation>

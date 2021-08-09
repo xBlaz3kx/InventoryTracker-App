@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_tools"
+    app:startDestination="@id/toolChooser">
+
+    <fragment
+        android:id="@+id/toolChooser"
+        android:name="com.inventorytracker.calculators.fragments.ChooseTool"
+        android:label="toolschooser"
+        tools:layout="@layout/calculator_choose_fragment">
+        <action
+            android:id="@+id/action_toolChooser_to_discountCalculator"
+            app:destination="@id/discountCalculator"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/toolChooser" />
+        <action
+            android:id="@+id/action_toolChooser_to_marginCalculator"
+            app:destination="@id/marginCalculator"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/toolChooser" />
+    </fragment>
+    <fragment
+        android:id="@+id/discountCalculator"
+        android:name="com.inventorytracker.calculators.fragments.DiscountCalculator"
+        android:label="discountCalculator" />
+    <fragment
+        android:id="@+id/marginCalculator"
+        android:name="com.inventorytracker.calculators.fragments.MarginCalculator"
+        android:label="marginCalculator" />
+</navigation>

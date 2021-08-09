@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_discounts"
+    app:startDestination="@id/discountChooserFragment">
+
+    <fragment
+        android:id="@+id/discountChooserFragment"
+        android:name="com.inventorytracker.discounts.fragments.DiscountChooserFragment"
+        android:label="discountchooser"
+        tools:layout="@layout/discount_choosediscount_fragment">
+        <action
+            android:id="@+id/action_discountChooserFragment_to_discountCustomerFragment"
+            app:destination="@id/discountCustomerFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <action
+            android:id="@+id/action_discountChooserFragment_to_discountProductFragment"
+            app:destination="@id/discountProductFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <action
+            android:id="@+id/action_discountChooserFragment_to_discountMakeFragment"
+            app:destination="@id/discountMakeFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <action
+            android:id="@+id/action_discountChooserFragment_to_discountManagerFragment"
+            app:destination="@id/discountManagerFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <argument
+            android:name="UID"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/discountCustomerFragment"
+        android:name="com.inventorytracker.discounts.fragments.DiscountCustomerFragment"
+        android:label="discountcustomerfragment"
+        tools:layout="@layout/discountcustomerfragment">
+        <action
+            android:id="@+id/action_discountCustomerFragment_to_discountMakeFragment"
+            app:destination="@id/discountMakeFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountCustomerFragment" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/discountMakeFragment"
+        android:name="com.inventorytracker.discounts.fragments.DiscountMakeDiscountFragment"
+        android:label="discountmake"
+        tools:layout="@layout/discountmake">
+        <action
+            android:id="@+id/action_discountMakeFragment_to_discountManagerFragment"
+            app:destination="@id/discountManagerFragment"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <action
+            android:id="@+id/action_discountMakeFragment_to_discountProductFragment"
+            app:destination="@id/discountProductFragment"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <action
+            android:id="@+id/action_discountMakeFragment_to_discountCustomerFragment"
+            app:destination="@id/discountCustomerFragment"
+            app:popUpTo="@+id/discountMakeFragment" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+        <argument
+            android:name="discountType"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/discountManagerFragment"
+        android:name="com.inventorytracker.discounts.fragments.DiscountManageFragment"
+        android:label="discountmanager"
+        tools:layout="@layout/discountmanager">
+        <action
+            android:id="@+id/action_discountManagerFragment_to_discountMakeFragment"
+            app:destination="@id/discountMakeFragment"
+            app:popUpTo="@+id/discountChooserFragment" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/discountProductFragment"
+        android:name="com.inventorytracker.discounts.fragments.DiscountProductFragment"
+        android:label="discountproductfragment"
+        tools:layout="@layout/discountproductfragment">
+        <action
+            android:id="@+id/action_discountProductFragment_to_discountMakeFragment"
+            app:destination="@id/discountMakeFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/discountProductFragment" />
+        <argument
+            android:name="UID"
+            app:argType="string" />
+    </fragment>
+</navigation>

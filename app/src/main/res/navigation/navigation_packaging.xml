@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_packaging"
+    app:startDestination="@id/packageActionFragment2">
+
+    <fragment
+        android:id="@+id/packageScanFragment"
+        android:name="com.inventorytracker.products.fragments.packages.PackageScanFragment"
+        android:label="packagereception"
+        tools:layout="@layout/package_reception_fragment">
+        <action
+            android:id="@+id/action_packageScanFragment_to_packageSessionReport2"
+            app:destination="@id/packageSessionReport"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/packageScanFragment" />
+        <action
+            android:id="@+id/action_packageScanFragment_to_packageCreationFragment"
+            app:destination="@id/packageCreationFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/packageScanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/packageSessionReport"
+        android:name="com.inventorytracker.products.fragments.packages.PackageSessionReport"
+        android:label="packageSessionReport">
+        <action
+            android:id="@+id/action_packageSessionReport_to_packageScanFragment2"
+            app:destination="@id/packageScanFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/packageSessionReport" />
+        <action
+            android:id="@+id/action_packageSessionReport_to_packagePacketInfoFragment"
+            app:destination="@id/packagePacketInfoFragment"
+            app:popUpTo="@id/packagePacketInfoFragment" />
+        <action
+            android:id="@+id/action_packageSessionReport_to_packageActionFragment2"
+            app:destination="@id/packageActionFragment2"
+            app:popUpTo="@id/packageActionFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/packageActionFragment2"
+        android:name="com.inventorytracker.products.fragments.packages.PackageActionFragment"
+        android:label="packageaction"
+        tools:layout="@layout/package_chooseaction_fragment">
+        <action
+            android:id="@+id/action_packageActionFragment2_to_packageCreationFragment2"
+            app:destination="@id/packageCreationFragment"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popUpTo="@+id/packageActionFragment2" />
+        <action
+            android:id="@+id/action_packageActionFragment2_to_packageSupplierOrderFragment"
+            app:destination="@id/packageSupplierOrderFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/packageCreationFragment"
+        android:name="com.inventorytracker.products.fragments.packages.PackageCreationFragment"
+        android:label="packagecreation"
+        tools:layout="@layout/package_createpackage_fragment">
+        <argument
+            android:name="packageBarcode"
+            app:argType="string" />
+        <argument
+            android:name="update"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/packagePacketInfoFragment"
+        android:name="com.inventorytracker.products.fragments.packages.PackageInfoFragment"
+        android:label="packagePacketInfoFragment">
+        <action
+            android:id="@+id/action_packagePacketInfoFragment_to_packageSessionReport"
+            app:destination="@id/packageSessionReport"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/packageSessionReport" />
+    </fragment>
+    <fragment
+        android:id="@+id/packageSupplierOrderFragment"
+        android:name="com.inventorytracker.products.fragments.packages.PackageSupplierOrderFragment"
+        android:label="packageSupplierOrderFragment">
+        <action
+            android:id="@+id/action_packageSupplierOrderFragment_to_packageSessionReport"
+            app:destination="@id/packageSessionReport"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+</navigation>

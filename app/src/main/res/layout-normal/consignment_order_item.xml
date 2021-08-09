@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/consignmentCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:cardBackgroundColor="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp">
+
+        <EditText
+            android:id="@+id/consignment_numinput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/consignment_productBarcode"
+            android:layout_marginTop="4dp"
+            android:hint="@string/consignment_productssold"
+            android:inputType="numberSigned"
+            android:maxLines="1"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/consignment_productBarcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/consignment_productName"
+            android:text="@string/barcode"
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/consignment_productsnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/number"
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/consignment_productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/productName"
+            android:textColor="@color/text_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

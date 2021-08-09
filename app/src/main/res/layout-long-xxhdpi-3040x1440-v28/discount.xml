@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/discountCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    app:cardBackgroundColor="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp">
+
+        <LinearLayout
+            android:id="@+id/discountReferences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discountType"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/discountType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/discount_type"
+            android:textColor="@color/text_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/discountIsActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discountReferences"
+            android:text="@string/discount_isActive"
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/discountPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discountIsActive"
+            android:text="@string/discount_percentage"
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/discountStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discountPercentage"
+            android:text="@string/discount_startDate"
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/discountEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discountStartDate"
+            android:text="@string/discount_endDate"
+            android:textColor="@color/text_white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
